@@ -6,7 +6,13 @@
     font-style: normal;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
+    display: flex;
+    flex-direction: column;
     font-size: 10px;
     background: rgb(149, 194, 215);
 }
@@ -34,9 +40,7 @@ a {
 }
 
 .logo-text {
-    margin-top: 0;
-    padding-top: 50px;
-    padding-bottom: 150px;
+    background: white;
     text-align: center;
     text-transform: uppercase;
     font-family: lakeshore;
