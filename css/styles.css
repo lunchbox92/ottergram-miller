@@ -21,6 +21,10 @@ a {
     text-decoration: none;
 }
 
+.main-header {
+    flex: 0 1 auto;
+}
+
 .text-white {
     color: #fff !important;
 }
@@ -47,12 +51,8 @@ a {
     font-size: 37pt;
 }
 
-.logo-subtext {
-    margin: 0 0;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24pt;
-    text-indent: 10%;
-    text-align: left;
+.main-content {
+    flex: 1 1 auto;
 }
 
 .thumbnail-item+.thumbnail-item {
