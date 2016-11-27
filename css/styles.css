@@ -53,6 +53,9 @@ a {
 
 .main-content {
     flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .thumbnail-item+.thumbnail-item {
@@ -67,6 +70,8 @@ a {
 }
 
 .thumbnail-list {
+    flex: 0 1 auto;
+    order: 2;
     list-style: none;
     padding: 0;
 
@@ -86,6 +91,10 @@ a {
     background: rgb(96, 125, 139);
     color: rgb(202, 238, 255);
     font-size: 18px;
+}
+
+.detail-image-container {
+  flex: 1 1 auto;
 }
 
 .detail-image {
