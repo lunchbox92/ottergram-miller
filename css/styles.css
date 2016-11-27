@@ -107,9 +107,10 @@ a {
 }
 
 .detail-image-title {
-    position: relative;
+    position: absolute;
     bottom: -16px;
     left: 4px;
+    
     font-family: airstreamregular;
     color: white;
     font-size: 40px;
