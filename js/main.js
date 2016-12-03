@@ -45,7 +45,23 @@ function getThumbnailsArray() {
 function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
-  thumbnails.forEach(addThumbClickHandler);
+  //thumbnails.forEach(addThumbClickHandler);
+  thumbnails.forEach(addChaosOtterClickHandler);
+}
+
+function addChaosOtterClickHandler(thumb){
+  'use strict';
+  thumb.addEventListener('click', function(event){
+    event.preventDefault();
+    setRandomDetailsFromThumb(thumb);
+  });
+}
+
+function setRandomDetailsFromThumb(thumbnail){
+  'use strict';
+  var randomInt = Math.floor(Math.random()*13) + 1;
+  var randomPhotoUrl = "img/photo-" + randomInt + ".jpeg";
+  setDetails(randomPhotoUrl, "You've been hit by Chaose Otter!");
 }
 
 initializeEvents();
