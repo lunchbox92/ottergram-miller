@@ -69,8 +69,14 @@ function addChaosOtterUrlClickHandler(thumb){
   thumb.addEventListener('click', function(event){
     event.preventDefault();
     changeRandomUrl();
-
+    setDetailsFromThumb(thumb);
+    resetThumbUrl(thumb);
   });
+}
+
+function resetThumbUrl(thumbnail){
+  'use strict';
+  thumbnail.setAttribute('data-image-url', thumbnail.getAttribute('href'));
 }
 
 function changeRandomUrl(){
@@ -78,9 +84,9 @@ function changeRandomUrl(){
   var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
   var thumbnailArray = [].slice.call(thumbnails);
   var otterCount = thumbnailArray.length;
-  var randomInt = Math.floor(Math.random()*otterCount) + 1;
+  var randomInt = Math.floor(Math.random()*otterCount)+ 1;
   var newUrl = "img/otter" + randomInt + ".jpg";
-  thumbnailArray[randomInt]..setAttribute('data-image-url', newUrl)
+  thumbnailArray[randomInt].setAttribute('data-image-url', newUrl);
 }
 
 initializeEvents();
