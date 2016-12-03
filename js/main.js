@@ -46,7 +46,7 @@ function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   //thumbnails.forEach(addThumbClickHandler);
-  thumbnails.forEach(addChaosOtterClickHandler);
+  thumbnails.forEach(addChaosOtterUrlClickHandler);
 }
 
 function addChaosOtterClickHandler(thumb){
@@ -62,6 +62,25 @@ function setRandomDetailsFromThumb(thumbnail){
   var randomInt = Math.floor(Math.random()*13) + 1;
   var randomPhotoUrl = "img/photo-" + randomInt + ".jpeg";
   setDetails(randomPhotoUrl, "You've been hit by Chaose Otter!");
+}
+
+function addChaosOtterUrlClickHandler(thumb){
+  'use strict';
+  thumb.addEventListener('click', function(event){
+    event.preventDefault();
+    changeRandomUrl();
+
+  });
+}
+
+function changeRandomUrl(){
+  'use strict';
+  var thumbnails = document.querySelectorAll(THUMBNAIL_LINK_SELECTOR);
+  var thumbnailArray = [].slice.call(thumbnails);
+  var otterCount = thumbnailArray.length;
+  var randomInt = Math.floor(Math.random()*otterCount) + 1;
+  var newUrl = "img/otter" + randomInt + ".jpg";
+  thumbnailArray[randomInt]..setAttribute('data-image-url', newUrl)
 }
 
 initializeEvents();
