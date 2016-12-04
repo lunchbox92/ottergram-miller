@@ -1,6 +1,9 @@
 var DETAIL_IMAGE_SELECTOR = '[data-image-role="target"]';
 var DETAIL_TITLE_SELECTOR = '[data-image-role="title"]';
 var THUMBNAIL_LINK_SELECTOR = '[data-image-role="trigger"]';
+var HIDDEN_DETAIL_CLASS = 'hidden-detail';
+var ESC_KEY = 27;
+
 
 function setDetails(imageUrl, titleText) {
   'use strict';
@@ -42,10 +45,27 @@ function getThumbnailsArray() {
   return thumbnailArray;
 }
 
+function hiddenDetails() {
+  'use strict';
+  document.body.classList.add(HIDDEN_DETAIL_CLASS);
+}
+
+function addKeyPressHandler(){
+  'use strict';
+  document.body.addEventListener('keyup', function(event){
+    event.preventDefault();
+    console.log(event.keyCode);
+    if(event.keyCode === ESC_KEY) {
+      hiddenDetails();
+    }
+  });
+}
+
 function initializeEvents() {
   'use strict';
   var thumbnails = getThumbnailsArray();
   thumbnails.forEach(addThumbClickHandler);
+  addKeyPressHandler();
 }
 
 initializeEvents();
