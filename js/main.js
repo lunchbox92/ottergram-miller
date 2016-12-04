@@ -35,6 +35,7 @@ function addThumbClickHandler(thumb) {
   thumb.addEventListener('click', function(event) {
   event.preventDefault();
   setDetailsFromThumb(thumb);
+  showDetails();
 });
 }
 
@@ -48,6 +49,11 @@ function getThumbnailsArray() {
 function hiddenDetails() {
   'use strict';
   document.body.classList.add(HIDDEN_DETAIL_CLASS);
+}
+
+function showDetails() {
+  'use strict';
+  document.body.classList.remove(HIDDEN_DETAIL_CLASS);
 }
 
 function addKeyPressHandler(){
