@@ -35,7 +35,7 @@ function addThumbClickHandler(thumb) {
   thumb.addEventListener('click', function(event) {
   event.preventDefault();
   setDetailsFromThumb(thumb);
-  showDetails();
+  showDetails(); 
 });
 }
 
