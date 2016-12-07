@@ -106,7 +106,7 @@ a {
 .detail-image-frame {
     text-align: center;
     position: relative;
-    transition: transform 500ms;
+    transition: transform 500ms cubic-bezier(.17, .14, .32, 1.35);
 }
 
 .is-tiny {
